@@ -1,0 +1,73 @@
+body {
+  background: radial-gradient(circle, #14532d, #052e16);
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.game-container {
+  max-width: 420px;
+  margin: auto;
+  padding: 15px;
+}
+
+.draw-area {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.current-number {
+  font-size: 48px;
+  background: gold;
+  color: black;
+  width: 80px;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.history {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+  margin: 15px 0;
+}
+
+.cell {
+  background: white;
+  color: black;
+  padding: 12px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cell.marked {
+  background: #22c55e;
+  color: white;
+}
+
+.bots {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+}
+
+#bingoBtn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 15px;
+  font-size: 20px;
+  background: gold;
+  border: none;
+  border-radius: 10px;
+}
+
+#message {
+  text-align: center;
+  margin-top: 10px;
+}

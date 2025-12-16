@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bingo TON</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+<!-- TELA MENU -->
+<div id="menuScreen" class="screen active">
+
+  <h1>🎱 Bingo TON</h1>
+
+  <div class="balance">
+    Saldo: <span id="balance">0.00</span> TON
+  </div>
+
+  <div class="modes">
+    <button data-mode="1" onclick="selectMode(1)">1v1 • x2</button>
+    <button data-mode="3" onclick="selectMode(3)">1v3 • x3</button>
+    <button data-mode="5" onclick="selectMode(5)">1v5 • x5</button>
+  </div>
+
+  <label>Aposta (TON)</label>
+  <input type="number" id="bet" value="0.1" min="0.1" step="0.1">
+
+  <label>Cartelas</label>
+  <input type="number" id="cards" value="1" min="1">
+
+  <button onclick="startGame()">🎲 JOGAR</button>
+</div>
+
+<!-- TELA JOGO -->
+<div id="gameScreen" class="screen">
+
+  <div class="draw-area">
+    <div id="currentNumber" class="current-number">--</div>
+    <div id="history" class="history"></div>
+  </div>
+
+  <div id="userCard" class="card"></div>
+
+  <div class="bots">
+    <div class="bot">🤖 Jogador 2</div>
+    <div class="bot">🤖 Jogador 3</div>
+  </div>
+
+  <button id="bingoBtn">BINGO!</button>
+  <div id="message"></div>
+
+</div>
+
+<script src="app.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
