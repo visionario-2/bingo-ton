@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
-from game_service import start_game
-from bingo_validator import check_bingo
+from backend.game_service import start_game
+from backend.bingo_validator import check_bingo
 from pydantic import BaseModel
 import os
 
@@ -49,3 +49,4 @@ def api_check_bingo(data: BingoCheck):
     return {
         "win": win
     }
+
