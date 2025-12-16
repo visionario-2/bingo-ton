@@ -3,88 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bingo TON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="stylesheet" href="/static/game.css">
+  <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
 
-<!-- ===============================
-TELA 1 — MENU
-=============================== -->
-<div id="menuScreen" class="screen active">
-  <h1>🎱 Bingo TON</h1>
+  <!-- ========================= -->
+  <!-- 🎮 TELA 1 — MENU -->
+  <!-- ========================= -->
+  <div id="screen-menu" class="screen active">
+    <h1>🎱 Bingo <span>TON</span></h1>
 
-  <button onclick="goToConfig()">▶ Jogar</button>
-</div>
-
-<!-- ===============================
-TELA 2 — CONFIGURAÇÃO
-=============================== -->
-<div id="configScreen" class="screen">
-
-  <h2>Configuração da Partida</h2>
-
-  <div class="modes">
-    <button data-mode="1" onclick="selectMode(1)">1v1 • x2</button>
-    <button data-mode="3" onclick="selectMode(3)">1v3 • x3</button>
-    <button data-mode="5" onclick="selectMode(5)">1v5 • x5</button>
+    <button class="primary-btn" onclick="goToConfig()">
+      ▶ Jogar
+    </button>
   </div>
 
-  <label>Aposta (TON)</label>
-  <input type="number" id="bet" value="0.1" min="0.1" step="0.1">
+  <!-- ========================= -->
+  <!-- ⚙️ TELA 2 — CONFIGURAÇÃO -->
+  <!-- ========================= -->
+  <div id="screen-config" class="screen">
+    <h2>⚙️ Configuração da Partida</h2>
 
-  <label>Cartelas</label>
-  <input type="number" id="cards" value="1" min="1">
-
-  <div class="actions">
-    <button onclick="returnToMenu()">Voltar</button>
-    <button onclick="startGame()">Iniciar</button>
-  </div>
-</div>
-
-<!-- ===============================
-TELA 3 — PARTIDA
-=============================== -->
-<div id="gameScreen" class="screen">
-
-  <div class="draw-area">
-    <div id="currentNumber">--</div>
-    <div id="countdown">Próximo número em 5s</div>
-    <div id="history"></div>
-  </div>
-
-  <div id="userCard" class="card"></div>
-
-  <div class="bots">
-    <div class="bot">
-      🤖 Jogador 2
-      <div class="mini-card"></div>
+    <div class="modes">
+      <button data-mode="1" onclick="selectMode(1)">1v1 ×2</button>
+      <button data-mode="3" onclick="selectMode(3)">1v3 ×3</button>
+      <button data-mode="5" onclick="selectMode(5)">1v5 ×5</button>
     </div>
-    <div class="bot">
-      🤖 Jogador 3
-      <div class="mini-card"></div>
+
+    <label>
+      Aposta (TON)
+      <input type="number" id="bet" value="0.1" step="0.1" />
+    </label>
+
+    <label>
+      Cartelas
+      <input type="number" id="cards" value="1" min="1" />
+    </label>
+
+    <div class="actions">
+      <button class="secondary-btn" onclick="goToMenu()">⬅ Voltar</button>
+      <button class="primary-btn" onclick="startGame()">🎱 Iniciar</button>
     </div>
   </div>
 
-  <button id="bingoBtn" onclick="checkBingo()">BINGO!</button>
+  <!-- ========================= -->
+  <!-- 🎱 TELA 3 — PARTIDA -->
+  <!-- ========================= -->
+  <div id="screen-game" class="screen">
+    <h2>🎱 Partida em andamento</h2>
 
-  <div id="message"></div>
-</div>
+    <div class="ball">
+      <span id="current-number">--</span>
+    </div>
 
-<!-- ===============================
-TELA 4 — RESULTADO
-=============================== -->
-<div id="resultScreen" class="screen">
-  <h1>🏆 BINGO!</h1>
-  <p id="resultMessage"></p>
-  <button onclick="returnToMenu()">Voltar ao menu</button>
-</div>
+    <p id="countdown">Próximo número em 5s</p>
 
-<!-- JS -->
-<script src="/static/app.js"></script>
-<script src="/static/game.js"></script>
+    <button class="bingo-btn" onclick="showResult()">🎉 BINGO!</button>
+  </div>
 
+  <!-- ========================= -->
+  <!-- 🏆 TELA 4 — RESULTADO -->
+  <!-- ========================= -->
+  <div id="screen-result" class="screen">
+    <h2>🏆 BINGO!</h2>
+    <p>Você ganhou!</p>
+
+    <button class="primary-btn" onclick="goToMenu()">
+      Voltar ao menu
+    </button>
+  </div>
+
+  <!-- JS -->
+  <script src="/static/app.js"></script>
 </body>
 </html>
