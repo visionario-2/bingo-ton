@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Bingo TON</title>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="game.css">
 </head>
 <body>
 
-<!-- TELA MENU -->
-<div id="menuScreen" class="screen active">
+<div id="app">
 
-  <h1>🎱 Bingo TON</h1>
+  <!-- 🎮 TELA 1 — MENU -->
+  <section id="screen-menu" class="screen active">
+    <h1 class="logo">🎱 Bingo TON</h1>
 
-  <div class="balance">
-    Saldo: <span id="balance">0.00</span> TON
-  </div>
+    <button class="btn primary" onclick="goToConfig()">
+      ▶ Jogar
+    </button>
+  </section>
 
-  <div class="modes">
-    <button data-mode="1" onclick="selectMode(1)">1v1 • x2</button>
-    <button data-mode="3" onclick="selectMode(3)">1v3 • x3</button>
-    <button data-mode="5" onclick="selectMode(5)">1v5 • x5</button>
-  </div>
+  <!-- ⚙️ TELA 2 — CONFIGURAÇÃO -->
+  <section id="screen-config" class="screen">
+    <h2>Configuração da Partida</h2>
 
-  <label>Aposta (TON)</label>
-  <input type="number" id="bet" value="0.1" min="0.1" step="0.1">
+    <div class="modes">
+      <button data-mode="1" onclick="selectMode(1)">1v1 ×2</button>
+      <button data-mode="3" onclick="selectMode(3)">1v3 ×3</button>
+      <button data-mode="5" onclick="selectMode(5)">1v5 ×5</button>
+    </div>
 
-  <label>Cartelas</label>
-  <input type="number" id="cards" value="1" min="1">
+    <label>Aposta (TON)</label>
+    <input id="bet" type="number" min="0.1" step="0.1" value="0.1">
 
-  <button onclick="startGame()">🎲 JOGAR</button>
+    <label>Cartelas</label>
+    <input id="cards" type="number" min="1" value="1">
+
+    <div class="actions">
+      <button class="btn secondary" onclick="goToMenu()">Voltar</button>
+      <button class="btn primary" onclick="startGame()">Iniciar</button>
+    </div>
+  </section>
+
+  <!-- 🎱 TELA 3 — PARTIDA -->
+  <section id="screen-game" class="screen">
+    <div class="draw-panel">
+      <div id="currentNumber">--</div>
+      <div id="nextTimer">Próximo número em <span>5</span>s</div>
+      <div id="history"></div>
+    </div>
+
+    <div id="playerCard" class="card"></div>
+
+    <div class="bots">
+      <div class="bot">
+        🤖 Jogador 2
+        <div class="mini-card"></div>
+      </div>
+      <div class="bot">
+        🤖 Jogador 3
+        <div class="mini-card"></div>
+      </div>
+    </div>
+
+    <button id="bingoBtn" class="btn bingo" onclick="claimBingo()">BINGO!</button>
+  </section>
+
+  <!-- 🏆 TELA 4 — RESULTADO -->
+  <section id="screen-result" class="screen">
+    <h1 class="win">🏆 BINGO!</h1>
+    <p>Você ganhou!</p>
+
+    <button class="btn primary" onclick="goToMenu()">
+      Voltar ao menu
+    </button>
+  </section>
+
 </div>
 
-<!-- TELA JOGO -->
-<div id="gameScreen" class="screen">
-
-  <div class="draw-area">
-    <div id="currentNumber" class="current-number">--</div>
-    <div id="history" class="history"></div>
-  </div>
-
-  <div id="userCard" class="card"></div>
-
-  <div class="bots">
-    <div class="bot">🤖 Jogador 2</div>
-    <div class="bot">🤖 Jogador 3</div>
-  </div>
-
-  <button id="bingoBtn">BINGO!</button>
-  <div id="message"></div>
-
-</div>
-
-<script src="/static/app.js"></script>
-<script src="/static/game.js"></script>
+<script src="app.js"></script>
+<script src="game.js"></script>
 </body>
 </html>
-
