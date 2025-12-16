@@ -1,3 +1,5 @@
+console.log("APP.JS NOVO CARREGADO - VERSÃO 2");
+
 // ===============================
 // ESTADO GLOBAL
 // ===============================
@@ -109,3 +111,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const bingoBtn = document.getElementById("bingoBtn");
   if (bingoBtn) bingoBtn.style.display = "none";
 });
+
