@@ -3,80 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bingo TON</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-  <!-- ========================= -->
-  <!-- 🎮 TELA 1 — MENU -->
-  <!-- ========================= -->
-  <div id="screen-menu" class="screen active">
-    <h1>🎱 Bingo <span>TON</span></h1>
+<!-- ================= TELA PARTIDA ================= -->
+<div id="screen-game" class="screen active">
 
-    <button class="primary-btn" onclick="goToConfig()">
-      ▶ Jogar
-    </button>
-  </div>
-
-  <!-- ========================= -->
-  <!-- ⚙️ TELA 2 — CONFIGURAÇÃO -->
-  <!-- ========================= -->
-  <div id="screen-config" class="screen">
-    <h2>⚙️ Configuração da Partida</h2>
-
-    <div class="modes">
-      <button data-mode="1" onclick="selectMode(1)">1v1 ×2</button>
-      <button data-mode="3" onclick="selectMode(3)">1v3 ×3</button>
-      <button data-mode="5" onclick="selectMode(5)">1v5 ×5</button>
-    </div>
-
-    <label>
-      Aposta (TON)
-      <input type="number" id="bet" value="0.1" step="0.1" />
-    </label>
-
-    <label>
-      Cartelas
-      <input type="number" id="cards" value="1" min="1" />
-    </label>
-
-    <div class="actions">
-      <button class="secondary-btn" onclick="goToMenu()">⬅ Voltar</button>
-      <button class="primary-btn" onclick="startGame()">🎱 Iniciar</button>
+  <!-- TOPO / BOLA -->
+  <div class="ball-area">
+    <div class="ball">17</div>
+    <div class="history">
+      <span>38</span><span>42</span><span>19</span><span>47</span><span>13</span>
     </div>
   </div>
 
-  <!-- ========================= -->
-  <!-- 🎱 TELA 3 — PARTIDA -->
-  <!-- ========================= -->
-  <div id="screen-game" class="screen">
-    <h2>🎱 Partida em andamento</h2>
-
-    <div class="ball">
-      <span id="current-number">--</span>
+  <!-- BOTS -->
+  <div class="bots-area">
+    <div class="bot">
+      <div class="bot-name">🤖 Jogador 2</div>
+      <div class="mini-card">
+        <span>15</span><span>24</span><span>33</span><span>4</span><span>20</span>
+        <span>17</span><span>39</span><span>39</span><span>8</span><span>11</span>
+      </div>
     </div>
 
-    <p id="countdown">Próximo número em 5s</p>
-
-    <button class="bingo-btn" onclick="showResult()">🎉 BINGO!</button>
+    <div class="bot">
+      <div class="bot-name">🤖 Jogador 3</div>
+      <div class="mini-card">
+        <span>6</span><span>23</span><span>29</span><span>44</span><span>61</span>
+        <span>10</span><span>16</span><span>36</span><span>33</span><span>72</span>
+      </div>
+    </div>
   </div>
 
-  <!-- ========================= -->
-  <!-- 🏆 TELA 4 — RESULTADO -->
-  <!-- ========================= -->
-  <div id="screen-result" class="screen">
-    <h2>🏆 BINGO!</h2>
-    <p>Você ganhou!</p>
+  <!-- CARTELA USUÁRIO -->
+  <div class="card">
+    <div class="card-header">
+      <span>B</span><span>I</span><span>N</span><span>G</span><span>O</span>
+    </div>
 
-    <button class="primary-btn" onclick="goToMenu()">
-      Voltar ao menu
-    </button>
+    <div class="grid">
+      <div class="cell">17</div>
+      <div class="cell">9</div>
+      <div class="cell">21</div>
+      <div class="cell">29</div>
+      <div class="cell">18</div>
+
+      <div class="cell">6</div>
+      <div class="cell">42</div>
+      <div class="cell free">★</div>
+      <div class="cell">41</div>
+      <div class="cell">53</div>
+
+      <div class="cell">53</div>
+      <div class="cell">56</div>
+      <div class="cell free">FREE</div>
+      <div class="cell">59</div>
+      <div class="cell">69</div>
+
+      <div class="cell">69</div>
+      <div class="cell">53</div>
+      <div class="cell">59</div>
+      <div class="cell">63</div>
+      <div class="cell">62</div>
+    </div>
   </div>
 
-  <!-- JS -->
-  <script src="/static/app.js"></script>
+  <!-- CONTROLES -->
+  <div class="controls">
+    <div class="timer">Próximo número em <b>5s</b></div>
+    <button class="bingo-btn">🎉 BINGO!</button>
+  </div>
+
+</div>
+
+<script src="/static/app.js"></script>
 </body>
 </html>
