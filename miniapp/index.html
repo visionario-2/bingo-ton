@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Bingo TON</title>
 
-  <link rel="stylesheet" href="/miniapp/style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/game.css">
 </head>
 <body>
 
-<div id="app">
+<!-- ===============================
+TELA 1 — MENU
+=============================== -->
+<div id="menuScreen" class="screen active">
+  <h1>🎱 Bingo TON</h1>
 
-  <!-- 🎮 TELA 1 — MENU -->
-  <section id="screen-menu" class="screen active">
-    <h1 class="logo">🎱 Bingo TON</h1>
-
-    <button class="btn primary" onclick="goToConfig()">
-      ▶ Jogar
-    </button>
-  </section>
-
-  <!-- ⚙️ TELA 2 — CONFIGURAÇÃO -->
-  <section id="screen-config" class="screen">
-    <h2>Configuração da Partida</h2>
-
-    <div class="modes">
-      <button data-mode="1" onclick="selectMode(1)">1v1 ×2</button>
-      <button data-mode="3" onclick="selectMode(3)">1v3 ×3</button>
-      <button data-mode="5" onclick="selectMode(5)">1v5 ×5</button>
-    </div>
-
-    <label>Aposta (TON)</label>
-    <input id="bet" type="number" min="0.1" step="0.1" value="0.1">
-
-    <label>Cartelas</label>
-    <input id="cards" type="number" min="1" value="1">
-
-    <div class="actions">
-      <button class="btn secondary" onclick="goToMenu()">Voltar</button>
-      <button class="btn primary" onclick="startGame()">Iniciar</button>
-    </div>
-  </section>
-
-  <!-- 🎱 TELA 3 — PARTIDA -->
-  <section id="screen-game" class="screen">
-    <div class="draw-panel">
-      <div id="currentNumber">--</div>
-      <div id="nextTimer">Próximo número em <span>5</span>s</div>
-      <div id="history"></div>
-    </div>
-
-    <div id="playerCard" class="card"></div>
-
-    <div class="bots">
-      <div class="bot">
-        🤖 Jogador 2
-        <div class="mini-card"></div>
-      </div>
-      <div class="bot">
-        🤖 Jogador 3
-        <div class="mini-card"></div>
-      </div>
-    </div>
-
-    <button id="bingoBtn" class="btn bingo" onclick="claimBingo()">BINGO!</button>
-  </section>
-
-  <!-- 🏆 TELA 4 — RESULTADO -->
-  <section id="screen-result" class="screen">
-    <h1 class="win">🏆 BINGO!</h1>
-    <p>Você ganhou!</p>
-
-    <button class="btn primary" onclick="goToMenu()">
-      Voltar ao menu
-    </button>
-  </section>
-
+  <button onclick="goToConfig()">▶ Jogar</button>
 </div>
 
-<script src="/miniapp/app.js"></script>
-<script src="/miniapp/game.js"></script>
+<!-- ===============================
+TELA 2 — CONFIGURAÇÃO
+=============================== -->
+<div id="configScreen" class="screen">
+
+  <h2>Configuração da Partida</h2>
+
+  <div class="modes">
+    <button data-mode="1" onclick="selectMode(1)">1v1 • x2</button>
+    <button data-mode="3" onclick="selectMode(3)">1v3 • x3</button>
+    <button data-mode="5" onclick="selectMode(5)">1v5 • x5</button>
+  </div>
+
+  <label>Aposta (TON)</label>
+  <input type="number" id="bet" value="0.1" min="0.1" step="0.1">
+
+  <label>Cartelas</label>
+  <input type="number" id="cards" value="1" min="1">
+
+  <div class="actions">
+    <button onclick="returnToMenu()">Voltar</button>
+    <button onclick="startGame()">Iniciar</button>
+  </div>
+</div>
+
+<!-- ===============================
+TELA 3 — PARTIDA
+=============================== -->
+<div id="gameScreen" class="screen">
+
+  <div class="draw-area">
+    <div id="currentNumber">--</div>
+    <div id="countdown">Próximo número em 5s</div>
+    <div id="history"></div>
+  </div>
+
+  <div id="userCard" class="card"></div>
+
+  <div class="bots">
+    <div class="bot">
+      🤖 Jogador 2
+      <div class="mini-card"></div>
+    </div>
+    <div class="bot">
+      🤖 Jogador 3
+      <div class="mini-card"></div>
+    </div>
+  </div>
+
+  <button id="bingoBtn" onclick="checkBingo()">BINGO!</button>
+
+  <div id="message"></div>
+</div>
+
+<!-- ===============================
+TELA 4 — RESULTADO
+=============================== -->
+<div id="resultScreen" class="screen">
+  <h1>🏆 BINGO!</h1>
+  <p id="resultMessage"></p>
+  <button onclick="returnToMenu()">Voltar ao menu</button>
+</div>
+
+<!-- JS -->
+<script src="/static/app.js"></script>
+<script src="/static/game.js"></script>
+
 </body>
 </html>
-
