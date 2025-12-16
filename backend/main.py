@@ -10,7 +10,7 @@ from backend.bingo_validator import check_bingo
 app = FastAPI()
 
 # ===============================
-# SERVIR MINI APP (FRONT)
+# SERVIR MINI APP (FRONTEND)
 # ===============================
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FRONT_DIR = os.path.join(BASE_DIR, "..", "miniapp")
@@ -22,20 +22,27 @@ def root():
     return FileResponse(os.path.join(FRONT_DIR, "index.html"))
 
 # ===============================
-# API DO JOGO
+# MODELOS
 # ===============================
 class StartGameRequest(BaseModel):
     mode: int
     bet: float
     cards: int
 
-@app.post("/api/game/start")
-def api_start_game(_: StartGameRequest):
-    return start_game()
-
 class BingoCheck(BaseModel):
     card: list
     drawnNumbers: list
+
+# ===============================
+# API DO JOGO
+# ===============================
+@app.post("/api/game/start")
+def api_start_game(data: StartGameRequest):
+    return start_game(
+        mode=data.mode,
+        bet=data.bet,
+        cards=data.cards
+    )
 
 @app.post("/api/check_bingo")
 def api_check_bingo(data: BingoCheck):
