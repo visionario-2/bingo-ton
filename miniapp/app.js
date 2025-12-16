@@ -4,9 +4,10 @@
 let selectedMode = 1;
 let currentBet = 0.1;
 let currentCards = 1;
+let gameActive = false;
 
 // ===============================
-// SELEÇÃO DE MODO (AJUSTE 1 OK)
+// SELEÇÃO DE MODO
 // ===============================
 function selectMode(mode) {
   selectedMode = mode;
@@ -31,7 +32,7 @@ async function startGame() {
   currentBet = parseFloat(document.getElementById("bet").value);
   currentCards = parseInt(document.getElementById("cards").value);
 
-  // validações anti-bug
+  // validações
   if (isNaN(currentBet) || currentBet < 0.1) {
     alert("A aposta mínima é 0.1 TON");
     return;
@@ -60,6 +61,7 @@ async function startGame() {
 
     const data = await res.json();
 
+    gameActive = true;
     showGameScreen();
     initGame(data);
 
@@ -75,12 +77,23 @@ async function startGame() {
 function showGameScreen() {
   document.getElementById("menuScreen").classList.remove("active");
   document.getElementById("gameScreen").classList.add("active");
+
+  // garante que o botão bingo só aparece no jogo
+  const bingoBtn = document.getElementById("bingoBtn");
+  if (bingoBtn) bingoBtn.style.display = "block";
 }
 
 function returnToMenu() {
+  gameActive = false;
+
   document.getElementById("gameScreen").classList.remove("active");
   document.getElementById("menuScreen").classList.add("active");
 
+  // esconde bingo fora do jogo
+  const bingoBtn = document.getElementById("bingoBtn");
+  if (bingoBtn) bingoBtn.style.display = "none";
+
+  // limpa estado do jogo
   if (typeof resetGame === "function") {
     resetGame();
   }
@@ -91,4 +104,8 @@ function returnToMenu() {
 // ===============================
 document.addEventListener("DOMContentLoaded", () => {
   selectMode(1);
+
+  // por segurança, o botão bingo começa escondido
+  const bingoBtn = document.getElementById("bingoBtn");
+  if (bingoBtn) bingoBtn.style.display = "none";
 });
