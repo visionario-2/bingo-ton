@@ -2,9 +2,18 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 import os
 
 app = FastAPI()
+
+app.mount(
+    "/miniapp",
+    StaticFiles(directory="miniapp", html=True),
+    name="miniapp"
+)
+
 
 # ==============================
 # FRONTEND (Mini App)
@@ -34,3 +43,4 @@ def start_game(data: StartGameRequest):
         "bet": data.bet,
         "cards": data.cards
     }
+
