@@ -3,125 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <title>Bingo TON</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonte premium -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-  <!-- PARTÍCULAS -->
-  <div class="particles"></div>
+  <!-- ========================= -->
+  <!-- 🏠 TELA 1 — MENU -->
+  <!-- ========================= -->
+  <div id="screen-menu" class="screen active">
+    <div class="card center">
+      <div class="logo">
+        <img src="/static/assets/bot.png" alt="Bingo TON" class="logo-icon">
+        <h1>Bingo <span>TON</span></h1>
+      </div>
 
-  <!-- ========================= -->
-  <!-- 🎮 TELA 1 — MENU -->
-  <!-- ========================= -->
-  <section id="screen-menu" class="screen active">
-    <div class="card">
-      <h1 class="title">🎱 Bingo <span>TON</span></h1>
-      <button class="btn primary" onclick="goToConfig()">▶ Jogar</button>
+      <button class="btn primary" onclick="goToConfig()">
+        ▶ Jogar
+      </button>
     </div>
-  </section>
+  </div>
 
   <!-- ========================= -->
   <!-- ⚙️ TELA 2 — CONFIGURAÇÃO -->
   <!-- ========================= -->
-  <section id="screen-config" class="screen">
+  <div id="screen-config" class="screen">
     <div class="card">
       <h2>⚙️ Configuração da Partida</h2>
 
       <div class="modes">
-        <button data-mode="1">1v1 ×2</button>
-        <button data-mode="3">1v3 ×3</button>
-        <button data-mode="5">1v5 ×5</button>
+        <button class="mode active">🏆 1v1 • x2</button>
+        <button class="mode">🏆 1v3 • x3</button>
+        <button class="mode">🏆 1v5 • x5</button>
       </div>
 
-      <div class="field">
+      <div class="form">
         <label>Aposta (TON)</label>
-        <input type="number" value="0.1" />
-      </div>
+        <input type="number" value="0.1" step="0.1">
 
-      <div class="field">
         <label>Cartelas</label>
-        <input type="number" value="1" />
+        <input type="number" value="1" min="1" max="5">
       </div>
 
       <div class="actions">
         <button class="btn secondary" onclick="goToMenu()">← Voltar</button>
-        <button class="btn primary" onclick="startGame()">Iniciar</button>
+        <button class="btn primary" onclick="goToGame()">Iniciar</button>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- ========================= -->
   <!-- 🎱 TELA 3 — PARTIDA -->
   <!-- ========================= -->
-  <section id="screen-game" class="screen">
-    <div class="game-container">
+  <div id="screen-game" class="screen">
+    <div class="card game">
 
-      <!-- Número sorteado -->
-      <div class="draw-ball">
-        <span>17</span>
+      <div class="draw">
+        <div class="ball">17</div>
+        <div class="history">
+          <span>38</span><span>42</span><span>19</span><span>47</span><span>13</span>
+        </div>
       </div>
 
-      <!-- Últimos números -->
-      <div class="draw-history">
-        <span>38</span><span>42</span><span>19</span><span>47</span><span>13</span>
-      </div>
-
-      <!-- Bots -->
       <div class="bots">
-        <div class="bot">
-          <img src="/static/assets/bot.png" />
-          <span>Jogador 2</span>
+        <div class="bot-card">
+          <img src="/static/assets/bot.png">
+          <p>Jogador 2</p>
         </div>
-        <div class="bot">
-          <img src="/static/assets/bot.png" />
-          <span>Jogador 3</span>
+        <div class="bot-card">
+          <img src="/static/assets/bot.png">
+          <p>Jogador 3</p>
         </div>
       </div>
 
-      <!-- Cartela -->
       <div class="bingo-card">
-        <div class="header">
-          <span>B</span><span>I</span><span>N</span><span>G</span><span>O</span>
-        </div>
-
-        <!-- 25 células -->
-        <div class="grid">
-          <!-- linha 1 -->
-          <div>17</div><div>9</div><div>21</div><div>29</div><div>18</div>
-          <!-- linha 2 -->
-          <div>6</div><div>42</div><div class="star">★</div><div>41</div><div>53</div>
-          <!-- linha 3 -->
-          <div>53</div><div>56</div><div>★</div><div>59</div><div>69</div>
-          <!-- linha 4 -->
-          <div>69</div><div>53</div><div>59</div><div>63</div><div>62</div>
-          <!-- linha 5 -->
-          <div>4</div><div>12</div><div>28</div><div>47</div><div>71</div>
-        </div>
+        <div class="row"><span>17</span><span>9</span><span>21</span><span>29</span><span>18</span></div>
+        <div class="row"><span>6</span><span>42</span><span class="star">★</span><span>41</span><span>53</span></div>
+        <div class="row"><span>53</span><span>56</span><span>59</span><span>69</span><span>62</span></div>
+        <div class="row"><span>69</span><span>53</span><span>59</span><span>63</span><span>62</span></div>
+        <div class="row"><span>1</span><span>7</span><span>11</span><span>24</span><span>30</span></div>
       </div>
 
-      <p class="next">Próximo número em 5s</p>
+      <p class="countdown">Próximo número em <strong>5s</strong></p>
 
-      <button class="btn bingo">🎉 BINGO!</button>
+      <button class="btn bingo" onclick="goToResult()">🎉 BINGO!</button>
 
     </div>
-  </section>
+  </div>
 
   <!-- ========================= -->
   <!-- 🏆 TELA 4 — RESULTADO -->
   <!-- ========================= -->
-  <section id="screen-result" class="screen">
-    <div class="card">
+  <div id="screen-result" class="screen">
+    <div class="card center">
       <h1>🏆 BINGO!</h1>
-      <p>Você ganhou!</p>
+      <p>Você ganhou 🎉</p>
+
       <button class="btn primary" onclick="goToMenu()">Voltar ao menu</button>
     </div>
-  </section>
+  </div>
 
-  <script src="/static/app.js"></script>
+  <!-- ========================= -->
+  <!-- JS MÍNIMO (troca de telas) -->
+  <!-- ========================= -->
+  <script>
+    function showScreen(id) {
+      document.querySelectorAll(".screen")
+        .forEach(s => s.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+
+    function goToMenu()   { showScreen("screen-menu"); }
+    function goToConfig() { showScreen("screen-config"); }
+    function goToGame()   { showScreen("screen-game"); }
+    function goToResult() { showScreen("screen-result"); }
+  </script>
+
 </body>
 </html>
