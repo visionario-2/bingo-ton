@@ -38,10 +38,12 @@ body::before {
   inset: 0;
   background-image: url("assets/particles.png");
   background-repeat: repeat;
-  opacity: 0.5;
+  opacity: 0.45;
   animation: particlesFall 30s linear infinite;
   pointer-events: none;
+  z-index: 0; /* fundo absoluto */
 }
+
 
 @keyframes particlesFall {
   from { background-position: 0 0; }
@@ -56,7 +58,10 @@ body::before {
   width: 100%;
   max-width: 420px;
   padding: 22px;
+  position: relative;
+  z-index: 2; /* conteúdo acima do fundo */
 }
+
 
 .screen.active {
   display: block;
@@ -75,10 +80,13 @@ body::before {
   background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
   border-radius: 22px;
   padding: 26px;
+  position: relative;
+  z-index: 3;
   box-shadow:
     0 0 0 1px rgba(255,180,0,0.15),
     0 0 40px rgba(255,180,0,0.25);
 }
+
 
 /* ======================================================
    TÍTULOS
@@ -261,3 +269,4 @@ input {
   color: #ffd000;
   margin-bottom: 10px;
 }
+
