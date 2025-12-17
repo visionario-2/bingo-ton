@@ -2,9 +2,11 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Bingo TON</title>
-  <link rel="stylesheet" href="./style.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/miniapp/style.css">
 </head>
 
 <body>
@@ -21,27 +23,27 @@
     <div class="menu-wrapper">
 
       <div class="menu-logo">
-        <img src="assets/logo.png" alt="Bingo TON">
+        <img src="/miniapp/assets/logo.png" alt="Bingo TON">
       </div>
 
       <div class="menu-buttons">
 
         <div class="game-button gold" onclick="goConfig(2)">
-          <img class="trophy" src="assets/trophy.png">
+          <img class="trophy" src="/miniapp/assets/trophy.png">
           <span>1v1 ×2</span>
-          <img class="badge" src="assets/badge_red_x2.png">
+          <img class="badge" src="/miniapp/assets/badge_red_x2.png">
         </div>
 
         <div class="game-button blue" onclick="goConfig(3)">
-          <img class="trophy" src="assets/trophy.png">
+          <img class="trophy" src="/miniapp/assets/trophy.png">
           <span>1v3 ×3</span>
-          <img class="badge" src="assets/badge_red_x3.png">
+          <img class="badge" src="/miniapp/assets/badge_red_x3.png">
         </div>
 
         <div class="game-button red" onclick="goConfig(5)">
-          <img class="trophy" src="assets/trophy.png">
+          <img class="trophy" src="/miniapp/assets/trophy.png">
           <span>1v5 ×5</span>
-          <img class="badge" src="assets/badge_red_x5.png">
+          <img class="badge" src="/miniapp/assets/badge_red_x5.png">
         </div>
 
       </div>
@@ -107,7 +109,7 @@
     </div>
   </div>
 
-  <!-- JS SIMPLES -->
+  <!-- JS -->
   <script>
     function showScreen(id) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -122,4 +124,3 @@
 
 </body>
 </html>
-
