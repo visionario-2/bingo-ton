@@ -1,32 +1,46 @@
-/* =========================
+/* ======================================================
    RESET & BASE
-========================= */
+====================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
 }
 
-body {
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #1a1a1a, #050505);
-  color: #fff;
+html, body {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
-/* =========================
-   PARTÍCULAS DOURADAS
-========================= */
-.particles {
+/* ======================================================
+   FUNDO CASSINO
+====================================================== */
+body {
+  background:
+    radial-gradient(circle at top, rgba(255,200,80,0.15), transparent 60%),
+    url("assets/background.png") center / cover no-repeat,
+    #0b0b0b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+}
+
+/* ======================================================
+   PARTÍCULAS DOURADAS (ANIMADAS)
+====================================================== */
+body::before {
+  content: "";
   position: fixed;
   inset: 0;
-  background:
-    url("/static/assets/particles.png") repeat,
-    radial-gradient(circle at top, #2b1d00, #000);
-  animation: particlesFall 25s linear infinite;
-  opacity: 0.6;
-  z-index: 0;
+  background-image: url("assets/particles.png");
+  background-repeat: repeat;
+  opacity: 0.5;
+  animation: particlesFall 30s linear infinite;
+  pointer-events: none;
 }
 
 @keyframes particlesFall {
@@ -34,215 +48,216 @@ body {
   to   { background-position: 0 2000px; }
 }
 
-/* =========================
+/* ======================================================
    TELAS
-========================= */
+====================================================== */
 .screen {
   display: none;
-  position: relative;
-  z-index: 1;
   width: 100%;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  max-width: 420px;
+  padding: 22px;
 }
 
 .screen.active {
-  display: flex;
+  display: block;
+  animation: fadeIn 0.4s ease;
 }
 
-/* =========================
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ======================================================
    CARD BASE
-========================= */
+====================================================== */
 .card {
-  background: linear-gradient(180deg, #141414, #0a0a0a);
+  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
   border-radius: 22px;
-  padding: 28px;
-  width: 92%;
-  max-width: 420px;
+  padding: 26px;
   box-shadow:
-    0 0 40px rgba(255,180,0,0.25),
-    inset 0 0 20px rgba(255,180,0,0.08);
-  text-align: center;
+    0 0 0 1px rgba(255,180,0,0.15),
+    0 0 40px rgba(255,180,0,0.25);
 }
 
-/* =========================
+/* ======================================================
    TÍTULOS
-========================= */
+====================================================== */
 .title {
-  font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 26px;
   font-weight: 800;
-  color: gold;
   margin-bottom: 20px;
 }
 
-.title span {
-  color: #00bfff;
-}
+.title span.gold { color: #ffcc00; }
+.title span.blue { color: #33ccff; }
 
-/* =========================
+/* ======================================================
    BOTÕES
-========================= */
+====================================================== */
 .btn {
   border: none;
   border-radius: 999px;
   padding: 14px 26px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: 0.25s;
 }
 
-.btn.primary {
-  background: linear-gradient(135deg, gold, orange);
+.btn-primary {
+  background: linear-gradient(180deg, #ffd000, #ff9f00);
   color: #000;
-  box-shadow: 0 0 18px rgba(255,180,0,0.7);
+  box-shadow: 0 0 18px rgba(255,200,0,0.6);
 }
 
-.btn.primary:hover {
-  transform: scale(1.06);
-  box-shadow: 0 0 30px rgba(255,200,0,1);
+.btn-primary:hover {
+  transform: scale(1.05);
 }
 
-.btn.secondary {
-  background: #333;
+.btn-secondary {
+  background: #2a2a2a;
   color: #fff;
 }
 
-.btn.bingo {
-  width: 100%;
-  margin-top: 16px;
-  background: linear-gradient(135deg, #ffd700, #ff8c00);
-  font-size: 20px;
-  box-shadow: 0 0 30px rgba(255,180,0,0.9);
+/* ======================================================
+   MODOS DE JOGO
+====================================================== */
+.modes {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
-/* =========================
-   GAME CONTAINER
-========================= */
-.game-container {
-  width: 100%;
-  max-width: 420px;
-  background: linear-gradient(180deg, #0f0f0f, #050505);
-  border-radius: 24px;
-  padding: 18px;
-  box-shadow: 0 0 50px rgba(255,180,0,0.35);
+.modes button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 14px;
+  border: none;
+  background: #222;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
 }
 
-/* =========================
-   BOLA SORTEADA
-========================= */
-.draw-ball {
+.modes button.active {
+  background: linear-gradient(180deg, #ffd000, #ff9f00);
+  color: #000;
+}
+
+/* ======================================================
+   INPUTS
+====================================================== */
+label {
+  display: block;
+  margin-top: 14px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: #1f1f1f;
+  color: #fff;
+  font-size: 15px;
+}
+
+/* ======================================================
+   PARTIDA
+====================================================== */
+.current-ball {
   width: 110px;
   height: 110px;
-  margin: 0 auto 12px;
   border-radius: 50%;
-  background: radial-gradient(circle, gold, orange);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 42px;
-  font-weight: 800;
+  background: radial-gradient(circle, #ffe07a, #ff9f00);
   color: #000;
-  box-shadow: 0 0 45px rgba(255,180,0,1);
-  animation: pulse 1.6s infinite;
+  font-size: 42px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  box-shadow: 0 0 35px rgba(255,200,0,0.8);
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
-
-/* =========================
-   HISTÓRICO
-========================= */
-.draw-history {
+.history {
   display: flex;
   justify-content: center;
-  gap: 6px;
-  margin-bottom: 12px;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
-.draw-history span {
-  background: #222;
+.history span {
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  padding: 6px 10px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 13px;
-  color: gold;
 }
 
-/* =========================
+/* ======================================================
+   CARTELA BINGO 5x5
+====================================================== */
+.bingo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.bingo-cell {
+  background: #1f1f1f;
+  border-radius: 12px;
+  padding: 12px 0;
+  text-align: center;
+  font-weight: 700;
+}
+
+.bingo-cell.center {
+  background: linear-gradient(180deg, #ffd000, #ff9f00);
+  color: #000;
+}
+
+/* ======================================================
    BOTS
-========================= */
+====================================================== */
 .bots {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-top: 18px;
 }
 
-.bot {
-  background: #111;
-  border-radius: 14px;
-  padding: 8px;
+.bot-card {
   width: 48%;
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 12px;
   text-align: center;
-  box-shadow: inset 0 0 10px rgba(255,180,0,0.15);
 }
 
-.bot img {
+.bot-card img {
   width: 48px;
-  margin-bottom: 4px;
-}
-
-/* =========================
-   CARTELA BINGO
-========================= */
-.bingo-card {
-  background: #0d0d0d;
-  border-radius: 18px;
-  padding: 10px;
-  box-shadow: inset 0 0 18px rgba(255,180,0,0.15);
-}
-
-.bingo-card .header {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  text-align: center;
-  font-weight: 800;
-  color: gold;
   margin-bottom: 6px;
 }
 
-.bingo-card .grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-}
-
-.bingo-card .grid div {
-  background: #1a1a1a;
-  border-radius: 10px;
-  padding: 10px 0;
+/* ======================================================
+   RESULTADO
+====================================================== */
+.result {
   text-align: center;
-  font-weight: 600;
-  box-shadow: inset 0 0 8px rgba(0,0,0,0.8);
 }
 
-.bingo-card .grid .star {
-  background: linear-gradient(135deg, gold, orange);
-  color: #000;
-  font-size: 20px;
-  box-shadow: 0 0 20px rgba(255,180,0,0.9);
+.result h2 {
+  color: #ffd000;
+  margin-bottom: 10px;
 }
-
-/* =========================
-   CONTADOR
-========================= */
-.next {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #ccc;
-}
-
