@@ -1,272 +1,225 @@
-/* ======================================================
-   RESET & BASE
-====================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-/* ======================================================
-   FUNDO CASSINO
-====================================================== */
 body {
-  background:
-    radial-gradient(circle at top, rgba(255,200,80,0.15), transparent 60%),
-    url("assets/background.png") center / cover no-repeat,
-    #0b0b0b;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
   color: #fff;
-  position: relative;
 }
 
-/* ======================================================
-   PARTÍCULAS DOURADAS (ANIMADAS)
-====================================================== */
-body::before {
-  content: "";
+/* FUNDO */
+.bg-layer {
   position: fixed;
   inset: 0;
-  background-image: url("assets/particles.png");
-  background-repeat: repeat;
-  opacity: 0.45;
-  animation: particlesFall 30s linear infinite;
-  pointer-events: none;
-  z-index: 0; /* fundo absoluto */
+  background: url("/static/assets/background.png") center/cover no-repeat;
+  z-index: 0;
 }
 
+.particles-layer {
+  position: fixed;
+  inset: 0;
+  background: url("/static/assets/particles.png") repeat;
+  animation: particles 40s linear infinite;
+  opacity: 0.7;
+  z-index: 1;
+}
 
-@keyframes particlesFall {
+@keyframes particles {
   from { background-position: 0 0; }
-  to   { background-position: 0 2000px; }
+  to { background-position: 0 2000px; }
 }
 
-/* ======================================================
-   TELAS
-====================================================== */
+/* TELAS */
 .screen {
-  display: none;
-  width: 100%;
-  max-width: 420px;
-  padding: 22px;
   position: relative;
-  z-index: 2; /* conteúdo acima do fundo */
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .screen.active {
-  display: block;
-  animation: fadeIn 0.4s ease;
+  display: flex;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to   { opacity: 1; transform: scale(1); }
-}
-
-/* ======================================================
-   CARD BASE
-====================================================== */
-.card {
-  background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+/* MENU */
+.menu-container {
+  background: linear-gradient(180deg, #111, #000);
+  padding: 40px;
   border-radius: 22px;
-  padding: 26px;
-  position: relative;
-  z-index: 3;
-  box-shadow:
-    0 0 0 1px rgba(255,180,0,0.15),
-    0 0 40px rgba(255,180,0,0.25);
+  box-shadow: 0 0 40px rgba(255, 180, 0, 0.6);
+  width: 340px;
+  text-align: center;
 }
 
-
-/* ======================================================
-   TÍTULOS
-====================================================== */
-.title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 26px;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.title span.gold { color: #ffcc00; }
-.title span.blue { color: #33ccff; }
-
-/* ======================================================
-   BOTÕES
-====================================================== */
-.btn {
-  border: none;
-  border-radius: 999px;
-  padding: 14px 26px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.25s;
-}
-
-.btn-primary {
-  background: linear-gradient(180deg, #ffd000, #ff9f00);
-  color: #000;
-  box-shadow: 0 0 18px rgba(255,200,0,0.6);
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-}
-
-.btn-secondary {
-  background: #2a2a2a;
-  color: #fff;
-}
-
-/* ======================================================
-   MODOS DE JOGO
-====================================================== */
-.modes {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.modes button {
-  flex: 1;
-  padding: 10px;
-  border-radius: 14px;
-  border: none;
-  background: #222;
-  color: #fff;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.modes button.active {
-  background: linear-gradient(180deg, #ffd000, #ff9f00);
-  color: #000;
-}
-
-/* ======================================================
-   INPUTS
-====================================================== */
-label {
-  display: block;
-  margin-top: 14px;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-input {
-  width: 100%;
-  margin-top: 6px;
-  padding: 10px;
-  border-radius: 12px;
-  border: none;
-  background: #1f1f1f;
-  color: #fff;
-  font-size: 15px;
-}
-
-/* ======================================================
-   PARTIDA
-====================================================== */
-.current-ball {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffe07a, #ff9f00);
-  color: #000;
-  font-size: 42px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 18px;
-  box-shadow: 0 0 35px rgba(255,200,0,0.8);
-}
-
-.history {
+.logo {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-bottom: 18px;
+  margin-bottom: 30px;
+}
+
+.ball {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #fff, #777);
+  border-radius: 50%;
+  color: #000;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-gold { color: gold; font-size: 26px; font-weight: 800; }
+.title-blue { color: #00c8ff; font-size: 26px; font-weight: 800; }
+
+.modes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mode-card {
+  border: none;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mode-card span {
+  background: darkred;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+.mode-card.gold { background: linear-gradient(135deg, #b8860b, #ffcc00); }
+.mode-card.blue { background: linear-gradient(135deg, #0066cc, #00c8ff); }
+.mode-card.red  { background: linear-gradient(135deg, #8b0000, #ff3333); }
+
+/* CONFIG */
+.config-container {
+  background: linear-gradient(180deg, #111, #000);
+  padding: 35px;
+  border-radius: 22px;
+  width: 360px;
+}
+
+.config-item {
+  margin: 20px 0;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.control button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: goldenrod;
+  color: #000;
+  font-weight: bold;
+}
+
+.control .blue {
+  background: #00c8ff;
+}
+
+/* BOTÕES */
+.btn-start {
+  margin-top: 20px;
+  width: 100%;
+  padding: 16px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, gold, orange);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-back {
+  margin-top: 10px;
+  background: none;
+  border: none;
+  color: #ccc;
+  cursor: pointer;
+}
+
+/* PARTIDA */
+.game-container {
+  background: linear-gradient(180deg, #111, #000);
+  padding: 30px;
+  border-radius: 22px;
+  width: 360px;
+  text-align: center;
+}
+
+.draw-ball {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: gold;
+  color: #000;
+  font-size: 32px;
+  font-weight: bold;
+  margin: auto;
 }
 
 .history span {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
+  margin: 0 4px;
+  opacity: 0.7;
 }
 
-/* ======================================================
-   CARTELA BINGO 5x5
-====================================================== */
-.bingo-grid {
+.bingo-card {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin-top: 18px;
+  gap: 6px;
+  margin: 20px 0;
 }
 
-.bingo-cell {
-  background: #1f1f1f;
-  border-radius: 12px;
-  padding: 12px 0;
-  text-align: center;
-  font-weight: 700;
+.bingo-card div {
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
 }
 
-.bingo-cell.center {
-  background: linear-gradient(180deg, #ffd000, #ff9f00);
+.star {
+  background: gold !important;
   color: #000;
 }
 
-/* ======================================================
-   BOTS
-====================================================== */
-.bots {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 18px;
+.btn-bingo {
+  margin-top: 10px;
+  padding: 14px;
+  width: 100%;
+  border-radius: 30px;
+  border: none;
+  background: gold;
+  font-weight: bold;
 }
 
-.bot-card {
-  width: 48%;
-  background: #1a1a1a;
-  border-radius: 16px;
-  padding: 12px;
+/* RESULTADO */
+.result-container {
+  background: linear-gradient(180deg, #111, #000);
+  padding: 40px;
+  border-radius: 22px;
   text-align: center;
 }
-
-.bot-card img {
-  width: 48px;
-  margin-bottom: 6px;
-}
-
-/* ======================================================
-   RESULTADO
-====================================================== */
-.result {
-  text-align: center;
-}
-
-.result h2 {
-  color: #ffd000;
-  margin-bottom: 10px;
-}
-
