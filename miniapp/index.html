@@ -1,126 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Bingo TON</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/static/style.css">
 </head>
+
 <body>
 
-  <!-- ========================= -->
-  <!-- 🏠 TELA 1 — MENU -->
-  <!-- ========================= -->
-  <div id="screen-menu" class="screen active">
-    <div class="card center">
-      <div class="logo">
-        <img src="/static/assets/bot.png" alt="Bingo TON" class="logo-icon">
-        <h1>Bingo <span>TON</span></h1>
-      </div>
+  <!-- FUNDO -->
+  <div class="bg"></div>
+  <div class="particles"></div>
 
-      <button class="btn primary" onclick="goToConfig()">
-        ▶ Jogar
-      </button>
-    </div>
-  </div>
-
-  <!-- ========================= -->
-  <!-- ⚙️ TELA 2 — CONFIGURAÇÃO -->
-  <!-- ========================= -->
-  <div id="screen-config" class="screen">
-    <div class="card">
-      <h2>⚙️ Configuração da Partida</h2>
+  <!-- 🏠 MENU -->
+  <section id="screen-menu" class="screen active">
+    <div class="panel">
+      <h1 class="logo">Bingo <span>TON</span></h1>
 
       <div class="modes">
-        <button class="mode active">🏆 1v1 • x2</button>
-        <button class="mode">🏆 1v3 • x3</button>
-        <button class="mode">🏆 1v5 • x5</button>
-      </div>
-
-      <div class="form">
-        <label>Aposta (TON)</label>
-        <input type="number" value="0.1" step="0.1">
-
-        <label>Cartelas</label>
-        <input type="number" value="1" min="1" max="5">
-      </div>
-
-      <div class="actions">
-        <button class="btn secondary" onclick="goToMenu()">← Voltar</button>
-        <button class="btn primary" onclick="goToGame()">Iniciar</button>
+        <button onclick="selectMode(1)">🏆 1v1 <b>x2</b></button>
+        <button onclick="selectMode(3)">🏆 1v3 <b>x3</b></button>
+        <button onclick="selectMode(5)">🏆 1v5 <b>x5</b></button>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ========================= -->
-  <!-- 🎱 TELA 3 — PARTIDA -->
-  <!-- ========================= -->
-  <div id="screen-game" class="screen">
-    <div class="card game">
+  <!-- ⚙️ CONFIGURAÇÃO -->
+  <section id="screen-config" class="screen">
+    <div class="panel">
+      <h2>Configurar Aposta</h2>
 
-      <div class="draw">
-        <div class="ball">17</div>
-        <div class="history">
-          <span>38</span><span>42</span><span>19</span><span>47</span><span>13</span>
+      <div class="control">
+        <span>Aposta (TON)</span>
+        <div class="step">
+          <button>-</button>
+          <strong>0.5</strong>
+          <button class="blue">+</button>
         </div>
       </div>
 
-      <div class="bots">
-        <div class="bot-card">
-          <img src="/static/assets/bot.png">
-          <p>Jogador 2</p>
-        </div>
-        <div class="bot-card">
-          <img src="/static/assets/bot.png">
-          <p>Jogador 3</p>
+      <div class="control">
+        <span>Cartelas</span>
+        <div class="step">
+          <button>-</button>
+          <strong>1</strong>
+          <button class="blue">+</button>
         </div>
       </div>
 
-      <div class="bingo-card">
-        <div class="row"><span>17</span><span>9</span><span>21</span><span>29</span><span>18</span></div>
-        <div class="row"><span>6</span><span>42</span><span class="star">★</span><span>41</span><span>53</span></div>
-        <div class="row"><span>53</span><span>56</span><span>59</span><span>69</span><span>62</span></div>
-        <div class="row"><span>69</span><span>53</span><span>59</span><span>63</span><span>62</span></div>
-        <div class="row"><span>1</span><span>7</span><span>11</span><span>24</span><span>30</span></div>
+      <div class="summary">
+        <p>Total: <b>0.5 TON</b></p>
+        <p>Ganhos possíveis: <b>1.0 TON</b></p>
       </div>
 
-      <p class="countdown">Próximo número em <strong>5s</strong></p>
-
-      <button class="btn bingo" onclick="goToResult()">🎉 BINGO!</button>
-
+      <button class="primary" onclick="goGame()">INICIAR PARTIDA</button>
     </div>
-  </div>
+  </section>
 
-  <!-- ========================= -->
-  <!-- 🏆 TELA 4 — RESULTADO -->
-  <!-- ========================= -->
-  <div id="screen-result" class="screen">
-    <div class="card center">
+  <!-- 🎱 PARTIDA -->
+  <section id="screen-game" class="screen">
+    <div class="panel game">
+      <div class="ball">17</div>
+      <p class="count">Próximo número em 5s</p>
+
+      <div class="card-grid">
+        <span>17</span><span>9</span><span>21</span><span>29</span><span>18</span>
+        <span>6</span><span>42</span><span class="star">★</span><span>41</span><span>53</span>
+        <span>53</span><span>56</span><span>59</span><span>69</span><span>62</span>
+        <span>8</span><span>11</span><span>24</span><span>30</span><span>33</span>
+        <span>7</span><span>19</span><span>22</span><span>44</span><span>60</span>
+      </div>
+
+      <button class="bingo" onclick="goResult()">BINGO!</button>
+    </div>
+  </section>
+
+  <!-- 🏆 RESULTADO -->
+  <section id="screen-result" class="screen">
+    <div class="panel">
       <h1>🏆 BINGO!</h1>
-      <p>Você ganhou 🎉</p>
-
-      <button class="btn primary" onclick="goToMenu()">Voltar ao menu</button>
+      <p>Você ganhou!</p>
+      <button class="primary" onclick="goMenu()">Voltar ao menu</button>
     </div>
-  </div>
+  </section>
 
-  <!-- ========================= -->
-  <!-- JS MÍNIMO (troca de telas) -->
-  <!-- ========================= -->
   <script>
-    function showScreen(id) {
-      document.querySelectorAll(".screen")
-        .forEach(s => s.classList.remove("active"));
-      document.getElementById(id).classList.add("active");
+    function show(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
     }
-
-    function goToMenu()   { showScreen("screen-menu"); }
-    function goToConfig() { showScreen("screen-config"); }
-    function goToGame()   { showScreen("screen-game"); }
-    function goToResult() { showScreen("screen-result"); }
+    function selectMode() { show('screen-config'); }
+    function goGame() { show('screen-game'); }
+    function goResult() { show('screen-result'); }
+    function goMenu() { show('screen-menu'); }
   </script>
 
 </body>
 </html>
-
