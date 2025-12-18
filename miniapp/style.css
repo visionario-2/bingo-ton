@@ -66,7 +66,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
   transform: scale(0.95);
 }
 
@@ -76,7 +76,7 @@ html, body {
 }
 
 .game-button {
-  margin-top: -40px; /* 🔥 aproxima manualmente */
+  margin-top: -60px; /* 🔥 aproxima manualmente */
 }
 
 /* BOTÕES DO MENU */
@@ -246,6 +246,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
