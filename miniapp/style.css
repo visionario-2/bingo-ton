@@ -73,7 +73,10 @@ html, body {
 .menu-buttons {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+}
+
+.game-button {
+  margin-top: -90px; /* 🔥 aproxima manualmente */
 }
 
 /* BOTÕES DO MENU */
