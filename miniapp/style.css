@@ -73,7 +73,7 @@ html, body {
 .menu-buttons {
   display: flex;
   flex-direction: column;
-  gap: -99px;
+  gap: 20px;
 }
 
 /* BOTÕES DO MENU */
@@ -81,7 +81,7 @@ html, body {
   position: relative;
 
   width: 380px;   /* 🔥 TAMANHO DEFINIDO NO CSS */
-  height: 210px;
+  height: 90px;
 
   display: flex;
   align-items: center;
@@ -243,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
