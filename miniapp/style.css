@@ -80,7 +80,7 @@ html, body {
 .game-button {
   position: relative;
 
-  width: 450px;   /* 🔥 TAMANHO DEFINIDO NO CSS */
+  width: 400px;   /* 🔥 TAMANHO DEFINIDO NO CSS */
   height: 210px;
 
   display: flex;
@@ -108,7 +108,7 @@ html, body {
 
 .game-button .trophy {
   position: absolute;
-  left: 44px;
+  left: 10px;
   width: 128px; /* 🔥 visível */
 }
 
@@ -125,8 +125,8 @@ html, body {
 .game-button .badge {
   position: absolute;
 
-  right: 8px;   /* 🔥 TRAZ PRA CIMA DO BOTÃO */
-  top: 25px;
+  right: 4px;   /* 🔥 TRAZ PRA CIMA DO BOTÃO */
+  top: 50px;
 
   width: 114px;
   pointer-events: none;
@@ -243,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
