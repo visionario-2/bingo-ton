@@ -73,7 +73,7 @@ html, body {
 .menu-buttons {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 5px;
 }
 
 /* BOTÕES DO MENU */
@@ -108,8 +108,8 @@ html, body {
 
 .game-button .trophy {
   position: absolute;
-  left: 22px;
-  width: 36px; /* 🔥 visível */
+  left: 66px;
+  width: 108px; /* 🔥 visível */
 }
 
 .game-button::before {
@@ -125,10 +125,10 @@ html, body {
 .game-button .badge {
   position: absolute;
 
-  right: 18px;   /* 🔥 TRAZ PRA CIMA DO BOTÃO */
+  right: 8px;   /* 🔥 TRAZ PRA CIMA DO BOTÃO */
   top: 5px;
 
-  width: 52px;
+  width: 104px;
   pointer-events: none;
 }
 
@@ -243,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
