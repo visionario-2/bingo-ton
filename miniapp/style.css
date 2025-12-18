@@ -54,7 +54,7 @@ html, body {
 .screen.active {
   display: flex;
   align-items: flex-start;   /* 🔥 */
-  padding-top: 30px;         /* 🔥 controla a posição */
+  padding-top: 5px;         /* 🔥 controla a posição */
 }
 
 
@@ -74,7 +74,7 @@ html, body {
   width: 360px;      /* 🔥 CONTROLA O TAMANHO */
   max-width: 90vw;   /* 🔥 garante que não estoure no celular */
   height: auto;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .menu-buttons {
@@ -253,6 +253,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
