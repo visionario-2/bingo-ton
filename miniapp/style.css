@@ -73,7 +73,7 @@ html, body {
 .menu-buttons {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 90px;
 }
 
 /* BOTÕES DO MENU */
@@ -125,10 +125,10 @@ html, body {
 .game-button .badge {
   position: absolute;
 
-  right: 4px;   /* 🔥 TRAZ PRA CIMA DO BOTÃO */
-  top: 70px;
+  right: 6px;   /* 🔥 TRAZ PRA CIMA DO BOTÃO */
+  top: 60px;
 
-  width: 140px;
+  width: 130px;
   pointer-events: none;
 }
 
@@ -243,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
