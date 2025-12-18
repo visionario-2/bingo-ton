@@ -76,8 +76,8 @@ html, body {
 .game-button {
   position: relative;
 
-  width: 420px;   /* 🔥 TAMANHO DEFINIDO NO CSS */
-  height: 88px;
+  width: 520px;   /* 🔥 TAMANHO DEFINIDO NO CSS */
+  height: 250px;
 
   display: flex;
   align-items: center;
@@ -235,5 +235,6 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
