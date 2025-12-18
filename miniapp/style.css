@@ -74,7 +74,7 @@ html, body {
   width: 360px;
   max-width: 90vw;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
   animation: glowSoft 3.5s ease-in-out infinite;
 }
@@ -276,6 +276,7 @@ html, body {
             drop-shadow(0 0 16px rgba(255, 160, 0, 0.3));
   }
 }
+
 
 
 
