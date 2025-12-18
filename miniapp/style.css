@@ -73,7 +73,7 @@ html, body {
 .menu-buttons {
   display: flex;
   flex-direction: column;
-  gap: -90px;
+  gap: -200px;
 }
 
 /* BOTÕES DO MENU */
@@ -108,7 +108,7 @@ html, body {
 
 .game-button .trophy {
   position: absolute;
-  left: 10px;
+  left: 30px;
   width: 200px; /* 🔥 visível */
 }
 
@@ -243,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
