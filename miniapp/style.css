@@ -74,7 +74,7 @@ html, body {
   width: 360px;      /* 🔥 CONTROLA O TAMANHO */
   max-width: 90vw;   /* 🔥 garante que não estoure no celular */
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 .menu-buttons {
@@ -253,6 +253,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
