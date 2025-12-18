@@ -76,7 +76,7 @@ html, body {
 }
 
 .game-button {
-  margin-top: -60px; /* 🔥 aproxima manualmente */
+  margin-top: -90px; /* 🔥 aproxima manualmente */
 }
 
 /* BOTÕES DO MENU */
@@ -246,6 +246,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
