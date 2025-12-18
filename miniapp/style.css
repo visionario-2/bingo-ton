@@ -108,8 +108,8 @@ html, body {
 
 .game-button .trophy {
   position: absolute;
-  left: 10px;
-  width: 128px; /* 🔥 visível */
+  left: 30px;
+  width: 105px; /* 🔥 visível */
 }
 
 .game-button::before {
@@ -126,9 +126,9 @@ html, body {
   position: absolute;
 
   right: 4px;   /* 🔥 TRAZ PRA CIMA DO BOTÃO */
-  top: 50px;
+  top: 70px;
 
-  width: 114px;
+  width: 140px;
   pointer-events: none;
 }
 
@@ -243,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
