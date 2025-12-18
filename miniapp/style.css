@@ -54,7 +54,7 @@ html, body {
 .screen.active {
   display: flex;
   align-items: flex-start;   /* 🔥 */
-  padding-top: 80px;         /* 🔥 controla a posição */
+  padding-top: 30px;         /* 🔥 controla a posição */
 }
 
 
@@ -253,6 +253,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
