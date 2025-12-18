@@ -53,7 +53,10 @@ html, body {
 
 .screen.active {
   display: flex;
+  align-items: flex-start;   /* 🔥 */
+  padding-top: 80px;         /* 🔥 controla a posição */
 }
+
 
 /* =====================
    MENU INICIAL
@@ -240,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
