@@ -71,11 +71,14 @@ html, body {
 }
 
 .menu-logo img {
-  width: 360px;      /* 🔥 CONTROLA O TAMANHO */
-  max-width: 90vw;   /* 🔥 garante que não estoure no celular */
+  width: 360px;
+  max-width: 90vw;
   height: auto;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
+
+  animation: glowSoft 3.5s ease-in-out infinite;
 }
+
 
 .menu-buttons {
   display: flex;
@@ -255,6 +258,24 @@ html, body {
 }
 
 
+
+/* ✨ GLOW SUAVE NA LOGO */
+@keyframes glowSoft {
+  0% {
+    filter: drop-shadow(0 0 8px rgba(255, 200, 80, 0.5))
+            drop-shadow(0 0 16px rgba(255, 160, 0, 0.3));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 220, 120, 0.8))
+            drop-shadow(0 0 28px rgba(255, 180, 40, 0.6));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 8px rgba(255, 200, 80, 0.5))
+            drop-shadow(0 0 16px rgba(255, 160, 0, 0.3));
+  }
+}
 
 
 
