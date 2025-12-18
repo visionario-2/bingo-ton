@@ -73,14 +73,14 @@ html, body {
 .menu-buttons {
   display: flex;
   flex-direction: column;
-  gap: -30px;
+  gap: -90px;
 }
 
 /* BOTÕES DO MENU */
 .game-button {
   position: relative;
 
-  width: 400px;   /* 🔥 TAMANHO DEFINIDO NO CSS */
+  width: 380px;   /* 🔥 TAMANHO DEFINIDO NO CSS */
   height: 210px;
 
   display: flex;
@@ -108,8 +108,8 @@ html, body {
 
 .game-button .trophy {
   position: absolute;
-  left: 30px;
-  width: 112px; /* 🔥 visível */
+  left: 10px;
+  width: 200px; /* 🔥 visível */
 }
 
 .game-button::before {
@@ -243,6 +243,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
