@@ -70,6 +70,13 @@ html, body {
   transform: scale(0.95);
 }
 
+.menu-logo img {
+  width: 360px;      /* 🔥 CONTROLA O TAMANHO */
+  max-width: 90vw;   /* 🔥 garante que não estoure no celular */
+  height: auto;
+  margin-bottom: 10px;
+}
+
 .menu-buttons {
   display: flex;
   flex-direction: column;
@@ -246,6 +253,7 @@ html, body {
   border-radius: 8px;
   color: #fff;
 }
+
 
 
 
