@@ -166,18 +166,19 @@ html, body {
 .panel {
   position: relative;
 
-  width: 460px;
-
-  padding: 6px 7px 8px;
+  width: 420px;              /* 🔥 largura real do painel */
+  min-height: 380px;         /* 🔥 altura mínima correta */
+  padding: 36px 32px 32px;   /* 🔥 espaço interno REAL */
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 5px;
+  justify-content: flex-start; /* 🔥 conteúdo começa do topo */
+  gap: 14px;                  /* 🔥 espaçamento entre itens */
 
   color: #fff;
   text-align: center;
 }
+
 
 /* LINHAS INTERNAS DO PAINEL (Aposta / Cartelas) */
 .panel .row {
@@ -325,6 +326,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
