@@ -166,14 +166,14 @@ html, body {
 .panel {
   position: relative;
 
-  width: 550px;
+  width: 460px;
 
   padding: 6px 7px 8px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 15px;
+  gap: 5px;
 
   color: #fff;
   text-align: center;
@@ -325,6 +325,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
