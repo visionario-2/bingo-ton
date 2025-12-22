@@ -180,6 +180,19 @@ html, body {
   text-align: center;
 }
 
+/* LINHAS INTERNAS DO PAINEL (Aposta / Cartelas) */
+.panel .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(0,0,0,0.35);
+  border-radius: 18px;
+
+  padding: 10px 14px;
+  gap: 12px;
+}
+
 
 .panel::before {
   content: "";
@@ -201,9 +214,15 @@ html, body {
 }
 
 .panel p {
-  color: #ddd;
-  margin: 6px 0;
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
 }
+
+.panel p b {
+  color: #ffd36a;
+}
+
 
 .row {
   display: flex;
@@ -221,8 +240,8 @@ html, body {
 .btn-gold {
   position: relative;
 
-  width: 360px;
-  height: 72px;
+  width: 345px;
+  height: 190px;
 
   display: flex;
   align-items: center;
@@ -288,6 +307,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
