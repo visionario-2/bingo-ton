@@ -166,7 +166,7 @@ html, body {
 .panel {
   position: relative;
 
-  width: 380px;
+  width: 450px;
 
   padding: 6px 7px 8px;
 
@@ -325,6 +325,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
