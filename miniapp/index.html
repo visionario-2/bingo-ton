@@ -22,7 +22,6 @@
 
     <div class="menu-wrapper">
 
-      <!-- LOGO (LAYOUT 1) -->
       <div class="menu-logo">
         <img src="/miniapp/assets/logo.png" alt="Bingo TON">
       </div>
@@ -56,34 +55,39 @@
   ====================== -->
   <div id="screen-config" class="screen">
 
-    <!-- LOGO (FORA DO PANEL — LAYOUT 2) -->
-    <div class="menu-logo">
-      <img src="/miniapp/assets/logo.png" alt="Bingo TON">
-    </div>
+    <!-- WRAPPER DO LAYOUT 2 -->
+    <div class="config-wrapper">
 
-    <!-- PANEL DOURADO -->
-    <div class="panel">
-
-      <h2>Configurar Aposta</h2>
-
-      <p>Aposta (TON)</p>
-      <div class="row">
-        <button>-</button>
-        <span>0.5</span>
-        <button>+</button>
+      <!-- LOGO FORA DO PANEL -->
+      <div class="menu-logo">
+        <img src="/miniapp/assets/logo.png" alt="Bingo TON">
       </div>
 
-      <p>Cartelas</p>
-      <div class="row">
-        <button>-</button>
-        <span>1</span>
-        <button>+</button>
+      <!-- PANEL -->
+      <div class="panel">
+
+        <h2>Configurar Aposta</h2>
+
+        <p>Aposta (TON)</p>
+        <div class="row">
+          <button>-</button>
+          <span>0.5</span>
+          <button>+</button>
+        </div>
+
+        <p>Cartelas</p>
+        <div class="row">
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </div>
+
+        <p>Total: <b>0.5 TON</b></p>
+        <p>Ganhos possíveis: <b>1.0 TON</b></p>
+
+        <button class="btn-gold" onclick="goGame()">INICIAR PARTIDA</button>
       </div>
 
-      <p>Total: <b>0.5 TON</b></p>
-      <p>Ganhos possíveis: <b>1.0 TON</b></p>
-
-      <button class="btn-gold" onclick="goGame()">INICIAR PARTIDA</button>
     </div>
   </div>
 
@@ -92,7 +96,6 @@
   ====================== -->
   <div id="screen-game" class="screen">
     <div class="panel">
-
       <div class="ball">17</div>
       <p>Próximo número em 5s</p>
 
