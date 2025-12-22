@@ -167,14 +167,13 @@ html, body {
   position: relative;
 
   width: 380px;
-  min-height: 420px;
 
-  padding: 2px 3px 4px;
+  padding: 12px 14px 8px;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 🔥 */
-  gap: -30px;
+  justify-content: center;
+  gap: 5px;
 
   color: #fff;
   text-align: center;
@@ -245,8 +244,8 @@ html, body {
   gap: 14px;
 
   width: 100%;          /* 🔥 FICA DENTRO DO PAINEL */
-  max-width: 320px;     /* 🔥 LIMITA A LARGURA */
-  margin: 0 auto 12px;
+  max-width: 260px;     /* 🔥 LIMITA A LARGURA */
+  margin: 0 auto;
 }
 
 
@@ -326,6 +325,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
