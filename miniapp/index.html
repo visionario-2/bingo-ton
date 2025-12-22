@@ -15,51 +15,56 @@
   <div class="bg"></div>
   <div class="particles"></div>
 
-<!-- =====================
-     TELA 1 — MENU INICIAL
-====================== -->
-<div id="screen-menu" class="screen active">
+  <!-- =====================
+       TELA 1 — MENU INICIAL
+  ====================== -->
+  <div id="screen-menu" class="screen active">
 
-  <div class="menu-wrapper">
+    <div class="menu-wrapper">
 
-    <div class="menu-logo">
-      <img src="/miniapp/assets/logo.png">
-    </div>
-
-    <div class="menu-buttons">
-
-      <div class="game-button" onclick="goConfig(2)">
-        <img class="trophy" src="/miniapp/assets/trophy.png" alt="">
-        <span>1v1 ×2</span>
-        <img class="badge" src="/miniapp/assets/badge_red_x2.png" alt="">
+      <!-- LOGO (LAYOUT 1) -->
+      <div class="menu-logo">
+        <img src="/miniapp/assets/logo.png" alt="Bingo TON">
       </div>
 
-      <div class="game-button" onclick="goConfig(3)">
-        <img class="trophy" src="/miniapp/assets/trophy.png" alt="">
-        <span>1v3 ×3</span>
-        <img class="badge" src="/miniapp/assets/badge_red_x3.png" alt="">
-      </div>
+      <div class="menu-buttons">
 
-      <div class="game-button" onclick="goConfig(5)">
-        <img class="trophy" src="/miniapp/assets/trophy.png" alt="">
-        <span>1v5 ×5</span>
-        <img class="badge" src="/miniapp/assets/badge_red_x5.png" alt="">
-      </div>
+        <div class="game-button" onclick="goConfig(2)">
+          <img class="trophy" src="/miniapp/assets/trophy.png" alt="">
+          <span>1v1 ×2</span>
+          <img class="badge" src="/miniapp/assets/badge_red_x2.png" alt="">
+        </div>
 
+        <div class="game-button" onclick="goConfig(3)">
+          <img class="trophy" src="/miniapp/assets/trophy.png" alt="">
+          <span>1v3 ×3</span>
+          <img class="badge" src="/miniapp/assets/badge_red_x3.png" alt="">
+        </div>
+
+        <div class="game-button" onclick="goConfig(5)">
+          <img class="trophy" src="/miniapp/assets/trophy.png" alt="">
+          <span>1v5 ×5</span>
+          <img class="badge" src="/miniapp/assets/badge_red_x5.png" alt="">
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
   <!-- =====================
        TELA 2 — CONFIGURAÇÃO
   ====================== -->
   <div id="screen-config" class="screen">
+
+    <!-- LOGO (FORA DO PANEL — LAYOUT 2) -->
+    <div class="menu-logo">
+      <img src="/miniapp/assets/logo.png" alt="Bingo TON">
+    </div>
+
+    <!-- PANEL DOURADO -->
     <div class="panel">
 
-      <!-- LOGO NO LAYOUT 2 -->
-   
       <h2>Configurar Aposta</h2>
-
 
       <p>Aposta (TON)</p>
       <div class="row">
@@ -87,6 +92,7 @@
   ====================== -->
   <div id="screen-game" class="screen">
     <div class="panel">
+
       <div class="ball">17</div>
       <p>Próximo número em 5s</p>
 
@@ -128,6 +134,3 @@
 
 </body>
 </html>
-
-
-
