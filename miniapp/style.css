@@ -169,12 +169,12 @@ html, body {
   width: 380px;
   min-height: 420px;
 
-  padding: 24px 20px 28px;
+  padding: 12px 10px 14px;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* 🔥 */
-  gap: 18px;
+  gap: 10px;
 
   color: #fff;
   text-align: center;
