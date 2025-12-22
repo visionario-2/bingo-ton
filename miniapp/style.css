@@ -193,6 +193,19 @@ html, body {
   gap: 12px;
 }
 
+/* LOGO DENTRO DO PAINEL (LAYOUT 2) */
+.panel-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.panel-logo img {
+  width: 240px;
+  max-width: 80%;
+  height: auto;
+}
+
 
 .panel::before {
   content: "";
@@ -307,6 +320,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
