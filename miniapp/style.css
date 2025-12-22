@@ -173,7 +173,7 @@ html, body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2px;
+  gap: -20px;
 
   color: #fff;
   text-align: center;
@@ -244,7 +244,7 @@ html, body {
   gap: 14px;
 
   width: 100%;          /* 🔥 FICA DENTRO DO PAINEL */
-  max-width: 220px;     /* 🔥 LIMITA A LARGURA */
+  max-width: 380px;     /* 🔥 LIMITA A LARGURA */
   margin: 0 auto;
 }
 
@@ -325,6 +325,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
