@@ -16,9 +16,21 @@ html, body {
 .bg {
   position: fixed;
   inset: 0;
-  background: url("/miniapp/assets/background.png") center/cover no-repeat;
+
+  background-image: url("/miniapp/assets/background.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center top;
+
+  animation: bgMove 60s linear infinite;
   z-index: 0;
 }
+
+@keyframes bgMove {
+  from { background-position: center 0; }
+  to   { background-position: center -800px; }
+}
+
 
 /* PARTICLES — SEM ZOOM */
 .particles {
@@ -30,7 +42,7 @@ html, body {
   background-size: auto;   /* 🔥 SEM ZOOM */
   background-position: center top;
 
-  animation: float 30s linear infinite;
+  animation: float 45s linear infinite;
   opacity: 0.8;
   z-index: 1;
 }
@@ -271,6 +283,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
