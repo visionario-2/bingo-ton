@@ -22,7 +22,7 @@ html, body {
   background-size: 100%;
   background-position: center top;
 
-  animation: bgMove 60s linear infinite;
+  animation: bgMove 70s linear infinite;
   z-index: 0;
 }
 
@@ -42,7 +42,7 @@ html, body {
   background-size: auto;   /* 🔥 SEM ZOOM */
   background-position: center top;
 
-  animation: float 35s linear infinite;
+  animation: float 45s linear infinite;
   opacity: 0.8;
   z-index: 1;
 }
