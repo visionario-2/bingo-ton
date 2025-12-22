@@ -169,7 +169,7 @@ html, body {
   width: 380px;
   min-height: 420px;
 
-  padding: 12px 10px 14px;
+  padding: 6px 5px 7px;
 
   display: flex;
   flex-direction: column;
@@ -326,6 +326,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
