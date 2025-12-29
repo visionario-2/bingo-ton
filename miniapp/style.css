@@ -167,13 +167,13 @@ html, body {
   position: relative;
 
   width: 420px;              /* 🔥 largura real do painel */
-  min-height: 220px;         /* 🔥 altura mínima correta */
-  padding: 6px 32px 32px;   /* 🔥 espaço interno REAL */
+  min-height: 160px;         /* 🔥 altura mínima correta */
+  padding: 2px 32px 32px;   /* 🔥 espaço interno REAL */
 
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* 🔥 conteúdo começa do topo */
-  gap: 8px;                  /* 🔥 espaçamento entre itens */
+  gap: 2px;                  /* 🔥 espaçamento entre itens */
 
   color: #fff;
   text-align: center;
@@ -197,7 +197,7 @@ html, body {
 .panel-logo {
   display: flex;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .panel-logo img {
@@ -326,6 +326,7 @@ html, body {
     filter: drop-shadow(0 0 10px rgba(0, 180, 255, 0.4));
   }
 }
+
 
 
 
